@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+<p id="alert"><%= alert %></p>
+
+<h1>Ads by category <%= Category.find(params[:id]).name %></h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>User</th>
+    <th>Picture</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @ads.each do |ad| %>
+      <tr>
+        <td><%= ad.title %></td>
+        <td><%= ad.content %></td>
+        <td><%= ad.user.username %></td>
+        <td><%= image_tag ad.image_url(:small).to_s %></td>
+        <td><%= link_to 'Details >>', ad %></td>
+        <% if current_user && current_user.admin %>
+            <td><%= link_to 'Edit', edit_ad_path(ad) %></td>
+            <td><%= link_to 'Destroy', ad, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+        <% end %>
+      </tr>
+  <% end %>
+
+</table>

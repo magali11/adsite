@@ -1,0 +1,40 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+ body {
+  padding: 60px 0 40px 0;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+ }
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+ #new-ad a, #new-ad a:visited, #new-ad a:active {
+ 	color: white; letter-spacing:0.8px; 
+ }
+ .catg-header {display:block;padding:0;font-size:11px;font-weight:bold;line-height:15px;color:#999999;text-shadow:0 1px 0 rgba(255, 255, 255, 0.5);text-transform:uppercase;}
+ .row-ad {padding:15px 0; border-bottom:1px solid #e3e3e3; }
+ .row-ad:hover {background-color: #f5f5f5;border-radius: 5px;}
+ #ads-list {}
+ #place-new{
+ 	-webkit-border-radius: 2px;
+    -moz-border-radius:2px;
+    border-radius: 2px;}
+ .nav-list{
+ 	border: 1px solid #e3e3e3;margin:20px 20px 0 0; border-radius: 5px; background-color: #f5f5f5;
+ }
+ .nav #welcome{line-height: 40px; color: #c24747;}
+ .upper{text-transform: uppercase;}

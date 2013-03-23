@@ -1,0 +1,19 @@
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<div id="ads-list">
+  <% @ads.each do |ad| %>
+  <div class="row row-ad">
+    <div class="span2">
+      <%= image_tag ad.image_url(:small).to_s %>
+    </div>  
+    <div class="span5">
+      <h5><%= ad.title %></h5>
+      <p> <%= ad.content %></p>
+      <p>Added by: <%= ad.user.username %></p>
+      <%= link_to 'See more »', ad, :class => "btn btn-mini" %>
+    </div>
+  </div>
+
+ <% end %>
+ </div>

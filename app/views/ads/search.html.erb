@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+<p id="alert"><%= alert %></p>
+
+<% if @ads.empty? %>
+  <p id="notice">Sorry, no results found</p>
+<% else %>
+
+  <h1>Search results</h1>
+
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Title</th>
+    <th>Content</th>
+    <th>User</th>
+    <th>Picture</th>
+    <th></th>
+  </tr>
+
+  <% @ads.each do |ad| %>
+      <tr>
+        <% if ad.category %>  
+          <td><%= ad.category.name %></td>
+        <% else %>
+          <td></td>
+        <% end %>
+        <td><%= ad.title %></td>
+        <td><%= ad.content %></td>
+        <td><%= ad.user.username %></td>
+        <td><%= image_tag ad.image_url(:small).to_s %></td>
+        <td><%= link_to 'Details >>', ad %></td>
+      </tr>
+  <% end %>
+</table>
+
+<% end %>

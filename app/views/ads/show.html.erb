@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <%= image_tag @ad.image_url(:medium).to_s %>
+</p>
+<h5 class="upper">
+  <%= @ad.title %>
+</h5>
+<p>
+  <%= @ad.content %>
+</p>
+
+<ul class="unstyled"> 
+	<li>Contact with <%= @ad.user.username %></li>
+	<li class="divider"></li>  
+	<li><%= image_tag("#") %> Call <%= @ad.user.username %></li>
+	<li><%= image_tag("#") %> Send email to <%= @ad.user.username %></li>
+</ul>
+
+<p>
+	<%= link_to 'View all ads', ads_path %>
+</p>
+<p>
+<% if current_user && @ad.user_id == current_user.id %>
+
+	<%= link_to edit_ad_path(@ad), :class => "btn" do %> 
+		<i class="icon-pencil"></i>  Edit
+	<% end %>           
+	<%= link_to @ad, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn" do %>
+		<i class="icon-remove"></i>  Delete
+	<% end %>
+
+<% else %>
+	<%= link_to favourites_path(:ad_id => @ad), :class => "btn btn-success" do %>
+		<i class="icon-ok icon-white"></i> Save ad
+	<% end %>	
+<% end %>
+</p>

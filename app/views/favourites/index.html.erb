@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>My favourites</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @favourites.each do |favourite| %>
+  <tr>
+    <% if favourite.ad_id != nil %>
+    <td><%= favourite.ad.title %></td>
+    <td><%= favourite.ad.content %></td>
+    <td><%= link_to 'Show', favourite %></td>
+    <td><%= link_to 'Destroy', favourite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+     <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />

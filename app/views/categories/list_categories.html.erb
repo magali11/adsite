@@ -1,0 +1,14 @@
+<h1>Browse adverts by category</h1>
+
+<ul>
+  <% @roots.each do |root| %>
+      <li><%= link_to root.name, categoryview_url(:id =>root.id) %>
+        <ul>
+          <% root.children.each do |child| %>
+              <li><%= link_to child.name, categoryview_url(:id => child.id) %></li>
+          <% end %>
+        </ul>
+      </li>
+
+  <% end %>
+</ul>
