@@ -26,6 +26,10 @@ gem 'awesome_nested_set'
 gem 'carrierwave'
 gem 'rmagick'
 
+group :production do
+	gem 'mysql'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -36,7 +40,7 @@ gem 'rmagick'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
